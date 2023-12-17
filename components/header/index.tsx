@@ -1,7 +1,21 @@
+'use client'
 import Image from 'next/image'
 import Tab from './Tab'
 import SearchInput from './SearchInput'
+import { useState } from 'react'
+
 const Header = () => {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const showReminderPopup = () => {
+    setShowPopup(true);
+  };
+
+  const hideReminderPopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <header className="bg-[#012E33] py-[31px] px-[41px]">
       <div className="flex justify-between items-center	">
@@ -23,13 +37,32 @@ const Header = () => {
           />
         </div>
         <div className="flex gap-8">
-          <Image
-            src="/icons/noti.svg"
-            alt="noti icon"
-            width={28}
-            height={28}
-            priority
-          />
+          <button className='items-center custom-button hover:bg-gray-700 rounded-md w-[28] h-[28]' onClick={showReminderPopup}>
+            <Image
+              src="/icons/noti.svg"
+              alt="noti icon"
+              width={35}
+              height={35}
+              priority
+            />
+          </button>
+
+          {showPopup && (
+            <div className="fixed bottom-4 right-4 bg-white border border-gray-300 p-4 rounded shadow-lg w-64 z-50 justify-between">
+              <div className="flex justify-end mb-4">
+                <p className="font-bold mx-[70px]">Chat Box</p>
+                <button onClick={hideReminderPopup}>&times;</button>
+              </div>
+              <div className="overflow-y-auto h-40">
+                {/* Chat messages go here */}
+                <div className="mb-2">User: Hello!</div>
+                <div className="mb-2">Bot: Hi there!</div>
+              </div>
+              <input type="text" placeholder="Type your message" className="border border-gray-300 p-2 w-full" />
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Send</button>
+            </div>
+          )}
+
           <div className="flex gap-4 h-[44px]">
             <div className="flex items-center justify-center">
               <Image
