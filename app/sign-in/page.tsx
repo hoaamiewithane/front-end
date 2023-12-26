@@ -14,8 +14,8 @@ const SignIn = () => {
       .value
     if (txtEmail == 'Get sign-in code' && txtEmailValue != '') {
       document.getElementById('email').style.display = 'none'
-      ;(document.getElementById('btnLogin') as HTMLInputElement).innerHTML =
-        'Login'
+        ; (document.getElementById('btnLogin') as HTMLInputElement).innerHTML =
+          'Login'
       document.getElementById('txtMsg').style.display = 'block'
       document.getElementById('txtTitle').className += ' text-center'
       document.getElementById('otpGrp').style.display = 'block'
@@ -48,7 +48,7 @@ const SignIn = () => {
             </div>
           </div>
           <div className="w-screen h-[120px] " />
-          <div className="px-[200px] flex-col justify-start items-start gap-11 flex">
+          <div className="px-[200px] flex-col justify-start items-start gap-11 flex" style={{height:"1080px"}}>
             <div className="WelcomeToOurOffice  text-zinc-800 text-[84px] font-medium font-['Poppins'] leading-[77.28px]">
               Welcome to our office
             </div>
@@ -57,8 +57,8 @@ const SignIn = () => {
               app—your personalized guide to a warm reception, local insights,
               and a memorable visit.
             </div>
-            <div className=" self-stretch p-10 bg-white rounded-[20px] shadow flex-col justify-start items-start gap-6 flex">
-              <div className="w-[647px]">
+            {/* <div className=" self-stretch p-10 bg-white rounded-[20px] shadow flex-col justify-start items-start gap-6 flex">
+              <div className="w-full">
                 <div
                   className="QuickAccessToYourSchedule text-zinc-1500 text-2xl font-black font-['Poppins'] leading-[28.80px]"
                   id="txtTitle"
@@ -113,6 +113,27 @@ const SignIn = () => {
               >
                 Get sign-in code
               </button>
+            </div> */}
+            <div className="Frame2 w-[618px] h-[331px] p-10 bg-white rounded-[20px] shadow flex-col justify-start items-center gap-6 inline-flex" style={{height: "400px"}}>
+              <div className="QuickAccessToYourSchedule text-zinc-800 text-2xl font-medium font-['Poppins'] leading-[28.80px]">Quick access to your schedule</div>
+              <div className="ThereIsACodeWasSentToYourEmailPleaseInsertItAndPressLogin self-stretch text-center text-zinc-800 text-base font-normal font-['Poppins'] leading-normal">There is a code was sent to your email, please insert it and press login.</div>
+              <div className="Frame33 self-stretch justify-center items-center gap-4 inline-flex">
+                <div className="Frame3 w-[54px] px-6 py-[18px] rounded border border-gray-300 justify-center items-center gap-2.5 flex">
+                  <div className=" text-zinc-500 text-base font-normal font-['Poppins'] leading-tight">1</div>
+                </div>
+                <div className="Frame5 w-[54px] h-[54px] px-6 py-[18px] rounded border border-gray-300 justify-center items-center gap-2.5 flex">
+                  <div className=" text-zinc-500 text-base font-normal font-['Poppins'] leading-tight">2</div>
+                </div>
+                <div className="Frame6 w-[54px] h-[54px] px-6 py-[18px] rounded border border-gray-300 justify-center items-center gap-2.5 flex">
+                  <div className=" text-zinc-500 text-base font-normal font-['Poppins'] leading-tight">3</div>
+                </div>
+                <div className="Frame7 w-[54px] h-[54px] px-6 py-[18px] rounded border border-gray-300 justify-center items-center gap-2.5 flex">
+                  <div className=" text-zinc-500 text-base font-normal font-['Poppins'] leading-tight">4</div>
+                </div>
+              </div>
+              <div className="Frame4 self-stretch px-[77px] py-6 bg-teal-700 rounded-[64px] justify-center items-center gap-2.5 inline-flex">
+                <div className="Login text-white text-xl font-medium font-['Poppins'] leading-normal">Login</div>
+              </div>
             </div>
           </div>
         </div>
